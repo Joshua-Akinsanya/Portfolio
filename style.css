@@ -1,10 +1,144 @@
+:root {
+    --primary-color: #d3d3d3;
+    --transient-color: #999999;
+    --secondary-color: #1c1c1c;
+    --accent-color: #3a3;
+    --link-color: #2a2;
+    --text-color: #1c1c1c;
+    --hero-bg: #55cc55;
+    --navbar-height: 60px;
+    --logo-radius: calc( var(--navbar-height) * 0.7);
+    --logo-top-margin: calc( var(--navbar-height) * 0.15);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background 0.2s ease;
 }
 
 body {
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+ul.main-bar {
+    list-style: none;
+    display: flex;
+}
+
+.main-bar li {
+    height: var(--navbar-height);
+    width: 20%;
+}
+.main-bar li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+ul.main-bar li:last-child {
+    margin-left: auto;
+}
+
+.main-bar li a {
+    margin: auto;
+    padding: 7px;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bar li a.logo {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    margin-top: var(--logo-top-margin);
+    width: var(--logo-radius);
+    height: var(--logo-radius);
+    border-radius: 50%;
+}
+.main-bar li a.logo:hover {
+    background-color: hsl(120, 90%, 43%);
+}
+
+.sidebar {
+    display: none;
+}
+
+section {
+    padding: 1.5rem;
+    padding-bottom: 2.25rem;
+}
+
+section h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 2px var(--accent-color);
+    margin-bottom: 2rem;
+}
+section.about-me h1 {
+    font-size: 2rem;
+    margin-bottom: none;
+    border: none;
+}
+
+.about-me {
+    background-color: var(--hero-bg);
+}
+
+.cover-photo {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+
+}
+
+.experiences {
+    display: grid;
+    grid-template-columns: repeat(minmax(200px, 1fr));
+    gap: 1rem;
+}
+.experience{
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer {
+    margin-top: auto;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide-on-mobile {
+    display: none;
 }
