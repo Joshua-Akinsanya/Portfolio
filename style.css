@@ -7,6 +7,7 @@
     --text-color: #2c2c2c;
     --hero-bg: #55cc55;
     --navbar-height: 60px;
+    --sidebar-height: 40px;
     --logo-radius: calc( var(--navbar-height) * 0.7);
     --logo-top-margin: calc( var(--navbar-height) * 0.15);
 }
@@ -37,6 +38,10 @@ nav {
     top: 0;
     background-color: var(--primary-color);
     box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+}
+
+svg {
+    fill: var(--text-color);
 }
 
 ul.main-bar {
@@ -77,14 +82,42 @@ ul.main-bar li:last-child {
 .main-bar li a.logo:hover {
     background-color: hsl(120, 90%, 43%);
 }
-.main-bar li button {
+.main-bar li button, .sidebar li button {
     border: none;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
 }
 
+ul li button {
+    cursor: pointer;
+}
+
 .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    height: 100vh;
+    width: 300px;
+    list-style: none;
     display: none;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.sidebar li a, .sidebar li button {
+    display: flex;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 0.8rem;
+}
+.sidebar li a:hover, .sidebar li button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+.sidebar li button svg {
+    margin-left: auto;
 }
 
 section {
